@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<input
+  autoFocus={true}
+  className="input"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  placeholder=""
+  type="text"
+  value=""
+/>
+`;
