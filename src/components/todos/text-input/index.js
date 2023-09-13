@@ -1,24 +1,21 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 import classNames from 'classnames'
 
 import styles from './index.module.scss'
 
-const ENTER_KEY = 13
+const ENTER_KEY = 'Enter'
 
-export default function TextInput({
-  className,
-  text,
-  placeholder,
-  disableSaveOnBlur,
-  onSave
-}) {
+const TextInput = forwardRef(function TextInput(
+  { className, text, placeholder, disableSaveOnBlur, onSave },
+  ref
+) {
   const [value, setValue] = useState(text || '')
   const handleChange = e => {
     setValue(e.target.value)
   }
   const handleKeyDown = e => {
-    if (e.which === ENTER_KEY) {
+    if (e.key === ENTER_KEY) {
       onSave(value)
       setValue('')
     }
@@ -33,7 +30,7 @@ export default function TextInput({
   return (
     <input
       type="text"
-      autoFocus
+      ref={ref}
       className={classNames(styles.input, className)}
       placeholder={placeholder}
       value={value}
@@ -42,7 +39,7 @@ export default function TextInput({
       onKeyDown={handleKeyDown}
     />
   )
-}
+})
 
 TextInput.propTypes = {
   className: PropTypes.string,
@@ -58,3 +55,5 @@ TextInput.defaultProps = {
   placeholder: '',
   disableSaveOnBlur: false
 }
+
+export default TextInput

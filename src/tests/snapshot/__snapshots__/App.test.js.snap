@@ -40,7 +40,6 @@ exports[`renders correctly 1`] = `
         data-testid="add-todo"
       >
         <input
-          autoFocus={true}
           className="input"
           onBlur={[Function]}
           onChange={[Function]}
