@@ -11,6 +11,7 @@ export default function ItemsList({
 }) {
   const dndSource = useRef(null)
   const dndDestination = useRef(null)
+
   return (
     <ul data-testid="todos-list">
       {todos.map(todo => (

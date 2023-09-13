@@ -20,7 +20,7 @@ const TextInput = forwardRef(function TextInput(
       setValue('')
     }
   }
-  const handleBlur = _ => {
+  const handleBlur = () => {
     if (!disableSaveOnBlur) {
       onSave(value)
       setValue('')
