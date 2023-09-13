@@ -19,6 +19,7 @@ exports[`renders correctly 1`] = `
       onClick={[Function]}
       viewBox="0 0 50 50"
       width={30}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <circle
         cx="25"
@@ -41,6 +42,7 @@ exports[`renders correctly 1`] = `
       onClick={[Function]}
       viewBox="0 0 50 50"
       width={30}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         d="M 5 5 L 45 45 M 45 5 L 5 45"

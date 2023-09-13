@@ -6,6 +6,7 @@ import styles from '../icons.module.scss'
 export default function CloseIcon({ className, width, height, handleClick }) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className={classnames(styles.icon, className)}
       width={width}
       height={height}

@@ -5,6 +5,7 @@ import styles from '../icons.module.scss'
 export default function CheckedCircleIcon({ width, height, handleClick }) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className={styles.icon}
       width={width}
       height={height}

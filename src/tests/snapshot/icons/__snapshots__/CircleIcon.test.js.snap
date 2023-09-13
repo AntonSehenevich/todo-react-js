@@ -8,6 +8,7 @@ exports[`renders correctly 1`] = `
   onClick={[MockFunction]}
   viewBox="0 0 50 50"
   width={10}
+  xmlns="http://www.w3.org/2000/svg"
 >
   <circle
     cx="25"

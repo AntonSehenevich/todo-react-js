@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 export default function LogoIcon({ className, width, height }) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       className={className}
       width={width}
       height={height}
