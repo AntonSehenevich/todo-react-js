@@ -4,7 +4,6 @@ import setupWithStateChangedListener from '../../../store/utils/state-changed-li
 
 test('handles state changed', () => {
   const handleStateChangedMock = jest.fn()
-  const withListener = setupWithStateChangedListener(handleStateChangedMock)
   const slice = createSlice({
     name: 'number',
     initialState: { current: 0 },
@@ -18,7 +17,11 @@ test('handles state changed', () => {
     reducer: {
       numbers: slice.reducer
     },
-    middleware: getDefaultMiddleware => withListener(getDefaultMiddleware)
+    middleware: getDefaultMiddleware =>
+      setupWithStateChangedListener(
+        getDefaultMiddleware(),
+        handleStateChangedMock
+      )
   })
 
   store.dispatch(slice.actions.setValue(1))

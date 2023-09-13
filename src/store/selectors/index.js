@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect'
-
 import { ALL, COMPLETED, UNCOMPLETED } from '../../constants/todoFilters'
 
 const getTodos = state => state.todos.items

@@ -6,6 +6,9 @@ import styles from '../../../components/todos/item-editor/index.module.scss'
 test('renders active item properly', () => {
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: false }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
@@ -25,6 +28,9 @@ test('renders active item properly', () => {
 test('renders completed item properly', () => {
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: true }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
@@ -46,6 +52,9 @@ test('toggles item (active)', () => {
 
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: false }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
@@ -67,6 +76,9 @@ test('toggles item (completed)', () => {
 
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: true }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
@@ -88,6 +100,9 @@ test('deletes item', () => {
 
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: false }}
       editItem={jest.fn()}
       deleteItem={handleDeleteItem}
@@ -107,6 +122,9 @@ test('deletes item', () => {
 test('enters edit mode', () => {
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: false }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
@@ -130,6 +148,9 @@ test('edits item', () => {
 
   render(
     <ItemEditor
+      handleDragStart={jest.fn()}
+      handleDragEnter={jest.fn()}
+      handleDragEnd={jest.fn()}
       item={{ id: '', text: 'text', completed: false }}
       editItem={handleEditItem}
       deleteItem={jest.fn()}

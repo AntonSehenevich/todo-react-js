@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import withDragAndDrop from '../with-drag-and-drop'
 import CloseIcon from '../../icons/close'
 import CircleIcon from '../../icons/circle'
 import CheckedCircleIcon from '../../icons/checked-circle'
-
 import TextInput from '../text-input'
 
 import styles from './index.module.scss'
 
-export default function TodoListItemEditor({
+function ItemEditor({
   item,
   editItem,
   deleteItem,
-  toggleItem
+  toggleItem,
+  onEditStateChanged
 }) {
   const [isEdit, setIsEdit] = useState(false)
   const onSave = text => {
     setIsEdit(false)
+    onEditStateChanged(false)
     editItem(item.id, text)
   }
 
@@ -41,7 +43,10 @@ export default function TodoListItemEditor({
         <button
           type="button"
           className={item.completed ? styles.completed : styles.text}
-          onClick={() => setIsEdit(true)}
+          onClick={() => {
+            setIsEdit(true)
+            onEditStateChanged(true)
+          }}
         >
           {item.text}
         </button>
@@ -56,7 +61,7 @@ export default function TodoListItemEditor({
   )
 }
 
-TodoListItemEditor.propTypes = {
+ItemEditor.propTypes = {
   item: PropTypes.exact({
     id: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
@@ -64,5 +69,8 @@ TodoListItemEditor.propTypes = {
   }).isRequired,
   editItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
-  toggleItem: PropTypes.func.isRequired
+  toggleItem: PropTypes.func.isRequired,
+  onEditStateChanged: PropTypes.func.isRequired
 }
+
+export default withDragAndDrop(ItemEditor)

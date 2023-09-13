@@ -9,12 +9,10 @@ import StateRepository from './store/persistence/repository'
 
 import './styles/main.scss'
 
-const withListener = setupWithStateChangedListener(state =>
-  StateRepository.updateState(state)
-)
-const store = setupStore(
-  StateRepository.getState() || {},
-  getDefaultMiddleware => withListener(getDefaultMiddleware)
+const store = setupStore(StateRepository.getState() || {}, middlewares =>
+  setupWithStateChangedListener(middlewares, state =>
+    StateRepository.updateState(state)
+  )
 )
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

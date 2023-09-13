@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { useRef } from 'react'
 import ItemEditor from '../item-editor'
-import Item from '../item'
 
 export default function ItemsList({
   todos,
@@ -12,11 +11,10 @@ export default function ItemsList({
 }) {
   const dndSource = useRef(null)
   const dndDestination = useRef(null)
-
   return (
     <ul data-testid="todos-list">
       {todos.map(todo => (
-        <Item
+        <ItemEditor
           key={todo.id}
           handleDragStart={() => {
             dndSource.current = todo.id
@@ -33,14 +31,11 @@ export default function ItemsList({
 
             reorderTodos({ source, destination })
           }}
-        >
-          <ItemEditor
-            item={todo}
-            editItem={(id, text) => editTodo({ id, text })}
-            deleteItem={id => deleteTodo(id)}
-            toggleItem={id => toggleTodo(id)}
-          />
-        </Item>
+          item={todo}
+          editItem={(id, text) => editTodo({ id, text })}
+          deleteItem={id => deleteTodo(id)}
+          toggleItem={id => toggleTodo(id)}
+        />
       ))}
     </ul>
   )

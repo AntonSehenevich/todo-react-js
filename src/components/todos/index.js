@@ -10,7 +10,6 @@ import {
 } from '../../store/slices/todos'
 import { setFilter } from '../../store/slices/filter'
 import selectTodos from '../../store/selectors'
-
 import Header from './header'
 import ItemsList from './items-list'
 import Footer from './footer'

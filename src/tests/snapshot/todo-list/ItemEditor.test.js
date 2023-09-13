@@ -5,6 +5,9 @@ test('renders correctly', () => {
   const tree = renderer
     .create(
       <ItemEditor
+        handleDragStart={jest.fn()}
+        handleDragEnter={jest.fn()}
+        handleDragEnd={jest.fn()}
         item={{ id: '', text: '', completed: false }}
         deleteItem={jest.fn()}
         editItem={jest.fn()}

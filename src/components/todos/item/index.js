@@ -4,6 +4,7 @@ import styles from './index.module.scss'
 
 export default function Item({
   children,
+  draggable,
   handleDragStart,
   handleDragEnter,
   handleDragEnd
@@ -11,7 +12,7 @@ export default function Item({
   return (
     <li
       className={styles.item}
-      draggable
+      draggable={draggable}
       onDragStart={handleDragStart}
       onDragEnter={handleDragEnter}
       onDragEnd={handleDragEnd}
@@ -26,11 +27,13 @@ export default function Item({
 
 Item.propTypes = {
   children: PropTypes.node,
+  draggable: PropTypes.bool,
   handleDragStart: PropTypes.func.isRequired,
   handleDragEnter: PropTypes.func.isRequired,
   handleDragEnd: PropTypes.func.isRequired
 }
 
 Item.defaultProps = {
-  children: null
+  children: null,
+  draggable: true
 }

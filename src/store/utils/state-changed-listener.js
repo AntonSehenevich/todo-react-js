@@ -1,19 +1,20 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit'
 
-export default function setupWithStateChangedListener(handleStateChanged) {
-  return getDefaultMiddleware => {
-    const listenerMiddleware = createListenerMiddleware()
+export default function setupWithStateChangedListener(
+  middlewares,
+  handleStateChanged
+) {
+  const listenerMiddleware = createListenerMiddleware()
 
-    listenerMiddleware.startListening({
-      predicate: (_, currentState, previousState) =>
-        currentState !== previousState,
-      effect: (_, listenerApi) => {
-        const state = listenerApi.getState()
+  listenerMiddleware.startListening({
+    predicate: (_, currentState, previousState) =>
+      currentState !== previousState,
+    effect: (_, listenerApi) => {
+      const state = listenerApi.getState()
 
-        handleStateChanged(state)
-      }
-    })
+      handleStateChanged(state)
+    }
+  })
 
-    return getDefaultMiddleware().prepend(listenerMiddleware.middleware)
-  }
+  return middlewares.prepend(listenerMiddleware.middleware)
 }

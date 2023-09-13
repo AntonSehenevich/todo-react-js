@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import { ALL, COMPLETED, UNCOMPLETED } from '../../../constants/todoFilters'
-
 import Filter from '../filter'
 
 import styles from './index.module.scss'
