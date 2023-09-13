@@ -29,7 +29,8 @@
     "cypress:run": "cypress run --browser chrome",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -57,6 +58,7 @@
     "jest": "^27.5.1",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "husky": "^8.0.0"
   }
 }
