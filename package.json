@@ -56,7 +56,6 @@
     "gh-pages": "^6.0.0",
     "husky": "^8.0.0",
     "jest": "^27.5.1",
-    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "react-test-renderer": "^18.2.0",
     "sass": "^1.66.1"
