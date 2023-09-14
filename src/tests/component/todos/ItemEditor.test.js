@@ -13,9 +13,7 @@ test('renders active item properly', () => {
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={jest.fn()}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const icon = screen.getByTestId('circle-icon')
@@ -35,9 +33,7 @@ test('renders completed item properly', () => {
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={jest.fn()}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const icon = screen.getByTestId('checked-circle-icon')
@@ -59,9 +55,7 @@ test('toggles item (active)', () => {
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={handleToggleItem}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const icon = screen.getByTestId('circle-icon')
@@ -84,9 +78,7 @@ test('toggles item (completed)', () => {
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={handleToggleItem}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const icon = screen.getByTestId('checked-circle-icon')
@@ -109,9 +101,7 @@ test('deletes item', () => {
       editItem={jest.fn()}
       deleteItem={handleDeleteItem}
       toggleItem={jest.fn()}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const icon = screen.getByTestId('close-icon')
@@ -132,9 +122,7 @@ test('enters edit mode', () => {
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={jest.fn()}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const button = screen.getByText(/text/i)
@@ -158,9 +146,7 @@ test('edits item', () => {
       editItem={handleEditItem}
       deleteItem={jest.fn()}
       toggleItem={jest.fn()}
-    >
-      text
-    </ItemEditor>
+    />
   )
 
   const button = screen.getByText(/text/i)
