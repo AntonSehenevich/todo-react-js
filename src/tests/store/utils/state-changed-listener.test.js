@@ -27,4 +27,5 @@ test('handles state changed', () => {
   store.dispatch(slice.actions.setValue(1))
 
   expect(handleStateChangedMock).toBeCalledTimes(1)
+  expect(handleStateChangedMock).toBeCalledWith({ numbers: { current: 1 } })
 })

@@ -55,7 +55,7 @@ test('toggles item (active)', () => {
       handleDragStart={jest.fn()}
       handleDragEnter={jest.fn()}
       handleDragEnd={jest.fn()}
-      item={{ id: '', text: 'text', completed: false }}
+      item={{ id: '1', text: 'text', completed: false }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={handleToggleItem}
@@ -69,6 +69,7 @@ test('toggles item (active)', () => {
   fireEvent.click(icon)
 
   expect(handleToggleItem).toBeCalledTimes(1)
+  expect(handleToggleItem).toBeCalledWith('1')
 })
 
 test('toggles item (completed)', () => {
@@ -79,7 +80,7 @@ test('toggles item (completed)', () => {
       handleDragStart={jest.fn()}
       handleDragEnter={jest.fn()}
       handleDragEnd={jest.fn()}
-      item={{ id: '', text: 'text', completed: true }}
+      item={{ id: '1', text: 'text', completed: true }}
       editItem={jest.fn()}
       deleteItem={jest.fn()}
       toggleItem={handleToggleItem}
@@ -93,6 +94,7 @@ test('toggles item (completed)', () => {
   fireEvent.click(icon)
 
   expect(handleToggleItem).toBeCalledTimes(1)
+  expect(handleToggleItem).toBeCalledWith('1')
 })
 
 test('deletes item', () => {
@@ -103,7 +105,7 @@ test('deletes item', () => {
       handleDragStart={jest.fn()}
       handleDragEnter={jest.fn()}
       handleDragEnd={jest.fn()}
-      item={{ id: '', text: 'text', completed: false }}
+      item={{ id: '1', text: 'text', completed: false }}
       editItem={jest.fn()}
       deleteItem={handleDeleteItem}
       toggleItem={jest.fn()}
@@ -117,6 +119,7 @@ test('deletes item', () => {
   fireEvent.click(icon)
 
   expect(handleDeleteItem).toBeCalledTimes(1)
+  expect(handleDeleteItem).toBeCalledWith('1')
 })
 
 test('enters edit mode', () => {
@@ -151,7 +154,7 @@ test('edits item', () => {
       handleDragStart={jest.fn()}
       handleDragEnter={jest.fn()}
       handleDragEnd={jest.fn()}
-      item={{ id: '', text: 'text', completed: false }}
+      item={{ id: '1', text: 'text', completed: false }}
       editItem={handleEditItem}
       deleteItem={jest.fn()}
       toggleItem={jest.fn()}
@@ -169,4 +172,5 @@ test('edits item', () => {
   fireEvent.keyDown(input, { keyCode: 13 })
 
   expect(handleEditItem).toBeCalledTimes(1)
+  expect(handleEditItem).toBeCalledWith('1', 'text')
 })

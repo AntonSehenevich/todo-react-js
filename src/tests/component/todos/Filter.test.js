@@ -15,6 +15,7 @@ test('renders and handles click properly when filter is "All"', () => {
 
   expect(button).toHaveClass(styles.active)
   expect(handleClickMock).toBeCalledTimes(1)
+  expect(handleClickMock).toBeCalledWith(ALL)
 })
 
 test('renders and handles click properly when filter is "Active"', () => {
@@ -28,6 +29,7 @@ test('renders and handles click properly when filter is "Active"', () => {
 
   expect(button).toHaveClass(styles.active)
   expect(handleClickMock).toBeCalledTimes(1)
+  expect(handleClickMock).toBeCalledWith(UNCOMPLETED)
 })
 
 test('renders and handles click properly when filter is "Completed"', () => {
@@ -41,4 +43,5 @@ test('renders and handles click properly when filter is "Completed"', () => {
 
   expect(button).toHaveClass(styles.active)
   expect(handleClickMock).toBeCalledTimes(1)
+  expect(handleClickMock).toBeCalledWith(COMPLETED)
 })

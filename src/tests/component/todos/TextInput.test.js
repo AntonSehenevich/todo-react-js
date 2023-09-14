@@ -42,6 +42,7 @@ test('saves ("Enter" key)', () => {
   fireEvent.keyDown(input, { keyCode: 13 })
 
   expect(handleOnSave).toBeCalledTimes(1)
+  expect(handleOnSave).toBeCalledWith('text')
 })
 
 test('saves (onBlur)', () => {
@@ -55,6 +56,7 @@ test('saves (onBlur)', () => {
   fireEvent.blur(input)
 
   expect(handleOnSave).toBeCalledTimes(1)
+  expect(handleOnSave).toBeCalledWith('text')
 })
 
 test('does not save (not "Enter" key)', () => {

@@ -48,6 +48,7 @@ test('sets filter', () => {
   fireEvent.click(filter)
 
   expect(setFilterMock).toBeCalledTimes(1)
+  expect(setFilterMock).toBeCalledWith(ALL)
 })
 
 test('deletes completed todos', () => {

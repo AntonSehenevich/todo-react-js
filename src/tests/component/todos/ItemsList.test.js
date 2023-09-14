@@ -94,6 +94,7 @@ test('edits todo', () => {
   fireEvent.keyDown(input, { keyCode: 13 })
 
   expect(editTodoMock).toBeCalledTimes(1)
+  expect(editTodoMock).toBeCalledWith({ id: '1', text: 'edited text' })
 })
 
 test('deletes todo', () => {
@@ -119,6 +120,7 @@ test('deletes todo', () => {
   fireEvent.click(icon)
 
   expect(deleteTodoMock).toBeCalledTimes(1)
+  expect(deleteTodoMock).toBeCalledWith('1')
 })
 
 test('toggles todo', () => {
@@ -144,6 +146,7 @@ test('toggles todo', () => {
   fireEvent.click(icon)
 
   expect(toggleTodoMock).toBeCalledTimes(1)
+  expect(toggleTodoMock).toBeCalledWith('1')
 })
 
 test('reorders todo', () => {
@@ -178,4 +181,5 @@ test('reorders todo', () => {
   fireEvent.dragEnd(firstItem)
 
   expect(reorderTodosMock).toBeCalledTimes(1)
+  expect(reorderTodosMock).toBeCalledWith({ source: '1', destination: '2' })
 })
